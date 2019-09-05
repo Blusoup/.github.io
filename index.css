@@ -259,6 +259,7 @@ body {
     font-weight: bold;
     margin: 2vh 10px;
     transition: 0.4s ease-in-out;
+    text-decoration: none;
 }
 
 .btn_one:hover {
