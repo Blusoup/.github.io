@@ -1,11 +1,18 @@
 <?php
 
-$EmailFrom = "hello@frnk.co.za";
-$EmailTo = "hello@frnk.co.za";
-$Subject = "New Message";
-$Name = Trim(stripslashes($_POST['Name']));
-$Email = Trim(stripslashes($_POST['Email'])); 
-$Message = Trim(stripslashes($_POST['Message'])); 
+if (isset($_POST['Submit'])) {
+$name = $_POST['Name'];
+$subject = $_POST['Subject'];
+$mailFrom = $_POST['Email'];
+$message = $_POST['Message'];
+
+$mailTo = "hello@frnk.co.za";
+$headers = "From: ".$mailFrom;
+$txt = "You have received an e-mail from ".$name.".\n\n".$message;
+
+mail($mailTo, $subject, $txt, $headers);
+header("Location: index.php?mailsend");
+}
 
 // validation
 $validationOK=true;
@@ -14,26 +21,5 @@ if (!$validationOK) {
   exit;
 }
 
-// prepare email body text
-$Body = "";
-$Body .= "Name: ";
-$Body .= $Name;
-$Body .= "\n";
-$Body .= "Email: ";
-$Body .= $Email;
-$Body .= "\n";
-$Body .= "Message: ";
-$Body .= $Message;
-$Body .= "\n";
 
-// send email 
-$success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
-
-// redirect to success page 
-if ($success){
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=contactthanks.php\">";
-}
-else{
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=error.htm\">";
-}
 ?>
