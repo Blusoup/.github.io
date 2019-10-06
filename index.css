@@ -67,18 +67,8 @@ body {
     margin-left: -5px;
 }
 
-#menu {
-    width: 100%;
-    text-align: center;
-    margin: 6vh 0px;
+.menu-inner {
     display: none;
-}
-
-#menu a {
-    margin: 0px 6%;
-    font-size: 19px;
-    color: #fff;
-    text-decoration: underline;
 }
 
 #middle {
@@ -97,7 +87,7 @@ body {
 
 #middle h1 {
     color: rgb(255, 50, 50);
-    font-size: 3em;
+    font-size: 70px;
     text-decoration: underline;
 }
 
@@ -400,16 +390,151 @@ body {
         width: 80%;
     }
 
+    /*===NAV===*/
+    .menu-opener,
+    .menu-opener:hover,
+    .menu-opener.active,
+    .menu-opener-inner,
+    .menu-opener-inner::before,
+    .menu-opener-inner::after,
+    .menu,
+    .menu.active {
+        -webkit-transition: 250ms all;
+        transition: 250ms all;
+    }
+
+    .menu-opener {
+        cursor: pointer;
+        height: 64px;
+        position: absolute;
+        top: 2%;
+        left: 1%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 64px;
+    }
+
+    .menu-opener:hover,
+    .menu-opener.active {
+        background: rgb(255, 50, 50);
+    }
+
+    .menu-opener-inner {
+        background: #fff;
+        height: .5rem;
+        margin-left: .75rem;
+        margin-top: 1.75rem;
+        width: 2.5rem;
+    }
+
+    .menu-opener-inner::before,
+    .menu-opener-inner::after {
+        background: white;
+        content: '';
+        display: block;
+        height: .5rem;
+        width: 2.5rem;
+    }
+
+    .menu-opener-inner::before {
+        -webkit-transform: translateY(-0.75rem);
+        -ms-transform: translateY(-0.75rem);
+        transform: translateY(-0.75rem);
+    }
+
+    .menu-opener-inner::after {
+        -webkit-transform: translateY(0.25rem);
+        -ms-transform: translateY(0.25rem);
+        transform: translateY(0.25rem);
+    }
+
+    .menu-opener-inner.active {
+        background: transparent;
+    }
+
+    .menu-opener-inner.active::before {
+        -webkit-transform: translateY(0rem) rotate(-45deg);
+        -ms-transform: translateY(0rem) rotate(-45deg);
+        transform: translateY(0rem) rotate(-45deg);
+    }
+
+    .menu-opener-inner.active::after {
+        -webkit-transform: translateY(-0.5rem) translateX(0rem) rotate(45deg);
+        -ms-transform: translateY(-0.5rem) translateX(0rem) rotate(45deg);
+        transform: translateY(-0.5rem) translateX(0rem) rotate(45deg);
+    }
+
+    .menu {
+        color: transparent;
+        height: 64px;
+        position: absolute;
+        top: 2%;
+        left: 1%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 0rem;
+        z-index: -1;
+    }
+
+    .menu.active {
+        width: -webkit-calc(100% - 2rem);
+        width: calc(100% - 2rem);
+    }
+
+    .menu.active .menu-link {
+        color: white;
+    }
+
+    .menu-inner {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        height: 100%;
+        list-style-type: none;
+        margin: 0;
+        margin-left: 4rem;
+        padding: 0;
+    }
+
+    .menu-link {
+        color: transparent;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        font-size: 2rem;
+        font-weight: 100;
+        height: 100%;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .menu-link li {
+        margin: auto;
+    }
+
+    /*===NAV end===*/
+
     .container form input {
         width: 90%;
     }
 
     .container form textarea {
         width: 90%;
-    }
-
-    #menu {
-        display: inline-block;
     }
 
     #onlywide {
@@ -422,5 +547,25 @@ body {
 
     #box div {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        height: auto;
+    }
+
+    .menu-inner {
+        display: block;
+    }
+
+    .menu-link {
+        padding: 10px 0;
+        font-size: 1.2em;
+    }
+
+    .menu.active {
+        width: -webkit-calc(100% - 0.5rem);
+        width: calc(100% - 0.5rem);
     }
 }
