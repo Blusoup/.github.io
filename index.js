@@ -53,6 +53,9 @@ setTimeout(function () {
 }, 1500);
 
 
-$(".menu-opener").click(function () {
-    $(".menu-opener, .menu-opener-inner, .menu").toggleClass("active");
+$(document).ready(function () {
+    $('.nav__trigger').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().toggleClass('nav--active');
+    });
 });

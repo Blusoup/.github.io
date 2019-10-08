@@ -29,23 +29,20 @@
     <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay:2.2s;">about</a>
     <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">work</a>
     <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay:2.2s;">contact</a>
+    <div class="burger__nav">
+        <div class="mob__nav">
+            <a href="#" class="nav__trigger"><span class="nav__icon"></span></a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" onclick="showabout()">about</a></li>
+                    <li class="nav__item"><a class="nav__link" onclick="showwork()">work</a></li>
+                    <li class="nav__item"><a class="nav__link" onclick="showcontact()">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
     <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
-        <nav class="menu-opener">
-            <div class="menu-opener-inner"></div>
-        </nav>
-        <nav class="menu">
-            <ul class="menu-inner">
-                <a onclick="showabout()" class="menu-link">
-                    <li>About</li>
-                </a>
-                <a onclick="showwork()" class="menu-link">
-                    <li>Work</li>
-                </a>
-                <a onclick="showcontact()" class="menu-link">
-                    <li>Contact</li>
-                </a>
-            </ul>
-        </nav>
+
         <h1>Hi, I'm Francois.</h1>
         <h2>ambitious web developer / partner / dad / outdoor enthusiast</h2>
         <table>
