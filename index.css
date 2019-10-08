@@ -340,6 +340,11 @@ body {
     color: rgb(255, 50, 50);
 }
 
+#footer a img {
+    max-width: 250px;
+    max-height: 100px;
+}
+
 #particles-js {
     position: fixed;
     width: 100vw;
